@@ -1,3 +1,7 @@
+
+
+#Authors : Rudresh Singh and Nitish Bishnoi
+
 import rclpy
 from geometry_msgs.msg import Twist
 from rclpy.node import Node
@@ -5,7 +9,6 @@ import numpy
 import math
 from rclpy.qos import QoSProfile
 from nav_msgs.msg import Odometry
-
 
 class Turtlebot3PositionControl(Node):
 
