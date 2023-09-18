@@ -1,3 +1,6 @@
+
+#Authors : Rudresh Singh and Nitish Bishnoi
+
 import rclpy
 from geometry_msgs.msg import Twist
 from rclpy.node import Node
