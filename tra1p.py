@@ -47,25 +47,23 @@ class Turtlebot3PositionControl(Node):
             qos)
 
       #  self.timer1 = self.create_timer(1.0, self.print_odom1)
-        self.timer3 = self.create_timer(0.1, self.PID)  
+        self.timer3 = self.create_timer(0.1, self.P)  
         # self.timer4 = self.create_timer(0.01, self.norm)
 
     def odom_callback1(self, msg):
         self.last_pose_x1 = msg.pose.pose.position.x
         self.last_pose_y1 = msg.pose.pose.position.y
         _, _, self.last_pose_theta1 = self.euler_from_quaternion(msg.pose.pose.orientation)
-        # Kp = 0.22/math.sqrt((a)**2 + (b)**2)
-        # Kp_z = 2.82/(-self.last_pose_theta1 + numpy.arctan((b)/(a)))
+
     
     def odom_callback2(self, msg):
         self.last_pose_x2 = msg.pose.pose.position.x
         self.last_pose_y2 = msg.pose.pose.position.y
         _, _, self.last_pose_theta2 = self.euler_from_quaternion(msg.pose.pose.orientation)
-        # Kp = 0.22/math.sqrt((a)**2 + (b)**2)
-        # Kp_z = 2.82/(-self.last_pose_theta1 + numpy.arctan((b)/(a)))
 
 
-    def PID(self):
+
+    def P(self):
         twist = Twist()
         # print(self.last_pose_x1,self.last_pose_y1)
 
@@ -77,10 +75,7 @@ class Turtlebot3PositionControl(Node):
             net_theta = -2*math.pi + net_theta
         elif(net_theta < -math.pi):
             net_theta = 2*math.pi + net_theta
-
-
-        #if( x_net > 0 and y_net >0 or x_net >0 and y_net < 0):
-         #   print(net_theta)
+            
         if(net_dist < 1 ):
             Kp = 0.18
         if(net_dist < 1.5 and net_dist > 1):
@@ -88,7 +83,9 @@ class Turtlebot3PositionControl(Node):
         if(net_dist > 1.5 and net_dist < 3.2) :
             Kp = 0.065
         Kp_z = 0.8
+        
         # print(self.last_pose_x1,self.last_pose_y1)
+        
         er_x = Kp * net_dist
         er_z = Kp_z * net_theta
         print(er_x , er_z , net_dist)
@@ -96,35 +93,7 @@ class Turtlebot3PositionControl(Node):
         twist.linear.x = er_x 
         twist.angular.z = er_z 
         self.cmd_pub1.publish(twist)
-        # elif( x_net <=0 and y_net >=0):
-        #     if(net_dist < 1.5):
-        #      Kp = 0.13
-        #     if(net_dist > 1.5 and net_dist < 3.2) :
-        #      Kp = 0.065
-        #     Kp_z = 0.8
-        #  #   print(self.last_pose_x1,self.last_pose_y1)
-        #     er_x = Kp * net_dist
-        #     er_z = Kp_z * net_theta
-        #     # print(er_z)
-        #     print(er_x , er_z)
-
-        #     twist.linear.x = er_x
-        #     twist.angular.z = er_z
-        #     self.cmd_pub1.publish(twist)
-        # else:
-        #     # Kp = 0.10
-        #     # Kp_z = 2.8
-        #  #   print(self.last_pose_x1,self.last_pose_y1)
-        #     er_x = Kp * math.sqrt((a - self.last_pose_x1)**2 + (b - self.last_pose_y1)**2)
-        #     er_z = Kp_z * (-self.last_pose_theta1 +( -math.pi/2 - numpy.arctan((b-self.last_pose_y1)/(a-self.last_pose_x1))))
-        #     print(er_z)
-
-        #     twist.linear.x = er_x
-        #     twist.angular.z = er_z
-        #     self.cmd_pub1.publish(twist)
-
- 
-
+        
     def euler_from_quaternion(self, quat):
         """
         Convert quaternion (w in last place) to euler roll, pitch, yaw.
