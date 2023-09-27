@@ -9,3 +9,6 @@ In tra1p.py we applied the Kp controller to track one turtlebot3 by another , it
 In 2Dconsen.py we are trying to reach a average point of 3 turtlebots that we have spawned. 
 
 
+In intersect.cpp , we have 3 circles with different centres and they are growing with a same rate(radius), and we are interested in coordinate which lies in all the circles and for that coordinate the radius is smallest possible.
+
+
