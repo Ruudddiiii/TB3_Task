@@ -19,6 +19,6 @@ intersectFAST.cpp , we now have 4 circle which are growing. I have optimised the
 Here suppose i have spawned 4 turtlebot in a 3m x 3m space and trying to find the interection point of the circles, for this specific case i have : 
 x1=-2.5;  y1=2.5; x2=-0.9; y2=-2.1; x3=2.0; y3=-2.1; x4=2.9; y4=0.3;
 
-and intersection of this circles given by intersectFAST.cpp is 
-Found the point (x,y) : -0.3 , 0.1
-Radius is : 10.89
+and intersection of this circles given by intersectFAST.cpp is : 
+"Found the point (x,y) : -0.3 , 0.1
+Radius is : 10.89"
