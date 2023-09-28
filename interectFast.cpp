@@ -93,6 +93,7 @@ for(i=0;i<=10;i=i+0.1)
 }
 if(d==9)
 {
+   
   cout<<"Radius is : ";
   cout<<i*i<<x;
   break;
@@ -100,6 +101,7 @@ if(d==9)
 se1.clear();
 se2.clear();
 se3.clear();
+se4.clear();
 
 }
 d=0;
