@@ -11,4 +11,6 @@ In 2Dconsen.py we are trying to reach a average point of 3 turtlebots that we ha
 
 In intersect.cpp , we have 3 circles with different centres and they are growing with a same rate(radius), and we are interested in coordinate which lies in all the circles and for that coordinate the radius is smallest possible.
 
+intersectFAST.cpp , we now have 4 circle which are growing. I have optimised the code using set , which has log(n) time complexity of finding pair in itself.
+
 
