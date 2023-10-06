@@ -26,6 +26,9 @@ In testc package i have integrated the intersectFAST.cpp code with the 4 turtleb
 
 In teleop3TB.py i am trying to control
 
-https://github.com/Ruudddiiii/TB3_Task/assets/107204888/ebf8f590-024f-4bf7-a792-482b9fc71db2
 
  3 turtlebot3 together using (W,S,D,A,X) keys so that they always stay on a stright line and move together everywhere.
+
+
+https://github.com/Ruudddiiii/TB3_Task/assets/107204888/ab345082-4b1f-47d2-a008-72d89a9d9d08
+
