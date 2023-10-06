@@ -72,12 +72,12 @@ class Turtlebot3PositionControl(Node):
 
             elif key.char == 'a':
                 self.b1=self.b1+1
-                self.twist.angular.z += self.b1*0.1
+                self.twist.angular.z = self.b1*0.1
                 self.twist.linear.x = self.a1*0.01
                 self.cmd_pub1.publish(self.twist)
             elif key.char == 'd':
                 self.b1=self.b1-1
-                self.twist.angular.z += self.b1*0.1
+                self.twist.angular.z = self.b1*0.1
                 self.twist.linear.x = self.a1*0.01
                 self.cmd_pub1.publish(self.twist)
             elif key.char == 's':
@@ -106,9 +106,9 @@ class Turtlebot3PositionControl(Node):
             # Handle key presses and adjust the Twist message
             if key.char == 'w':
                 self.a2=self.a2+1
-                self.twist.linear.x += self.a2*0.01
+                self.twist.linear.x = self.a2*0.01
                 self.cmd_pub2.publish(self.twist)
-                self.twist.angular.z += self.b2*0.1
+                self.twist.angular.z = self.b2*0.1
                 self.cmd_pub2.publish(self.twist)
 
             elif key.char == 'x':
@@ -121,17 +121,17 @@ class Turtlebot3PositionControl(Node):
             elif key.char == 'a':
                 self.twist.linear.x =  self.a2*0.01
                 self.c2=self.c2+1
-                self.twist.linear.x += self.c2*0.05
+                self.twist.linear.x = self.c2*0.05
                 self.b2=self.b2+1
-                self.twist.angular.z += self.b2*0.1
+                self.twist.angular.z = self.b2*0.1
                 self.cmd_pub2.publish(self.twist)
   
             elif key.char == 'd':
                 self.twist.linear.x =  self.a2*0.01
                 self.c2=self.c2-1
-                self.twist.linear.x += self.c2*0.05
+                self.twist.linear.x = self.c2*0.05
                 self.b2=self.b2-1
-                self.twist.angular.z += self.b2*0.1
+                self.twist.angular.z = self.b2*0.1
                 self.cmd_pub2.publish(self.twist)
 
             elif key.char == 's':
@@ -159,32 +159,32 @@ class Turtlebot3PositionControl(Node):
             # Handle key presses and adjust the Twist message
             if key.char == 'w':
                 self.a3=self.a3+1
-                self.twist.linear.x += self.a3*0.01
+                self.twist.linear.x = self.a3*0.01
                 self.cmd_pub3.publish(self.twist)
-                self.twist.angular.z += self.b3*0.1
+                self.twist.angular.z = self.b3*0.1
                 self.cmd_pub3.publish(self.twist)
 
             elif key.char == 'x':
-                self.twist.linear.x -= self.a3*0.01
+                self.twist.linear.x = self.a3*0.01
                 self.a3=self.a3-1
                 self.cmd_pub3.publish(self.twist)
-                self.twist.angular.z += self.b3*0.1
+                self.twist.angular.z = self.b3*0.1
                 self.cmd_pub3.publish(self.twist)
 
             elif key.char == 'a':
                 self.twist.linear.x =  self.a3*0.01
                 self.c3=self.c3+1
-                self.twist.linear.x -= self.c3*0.05
+                self.twist.linear.x  self.c3*0.05
                 self.b3=self.b3+1
-                self.twist.angular.z += self.b3*0.1
+                self.twist.angular.z = self.b3*0.1
                 self.cmd_pub3.publish(self.twist)
 
             elif key.char == 'd':
                 self.twist.linear.x =  self.a3*0.01
                 self.c3=self.c3-1
-                self.twist.linear.x -= self.c3*0.05
+                self.twist.linear.x = self.c3*0.05
                 self.b3=self.b3-1
-                self.twist.angular.z += self.b3*0.1
+                self.twist.angular.z = self.b3*0.1
                 self.cmd_pub3.publish(self.twist)
                 
             elif key.char == 's':
