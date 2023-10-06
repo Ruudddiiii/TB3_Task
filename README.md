@@ -23,3 +23,5 @@ and intersection of this circles given by intersectFAST.cpp is :
 Radius is : 10.89"
 
 In testc package i have integrated the intersectFAST.cpp code with the 4 turtlebot to get their point of interestion of their growing circle, and further using cmd_vel topic we can steer robot to that point(steer is yet to be implemented) .
+
+In teleop3TB.py i am trying to control 3 turtlebot3 together using (W,S,D,A,X) keys so that they always stay on a stright line and move together everywhere.
