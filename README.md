@@ -1,12 +1,16 @@
 # TB3_Task
 
-1) In odoo.py we implemented tracking of turtlebot(tb3_2) by a 2nd turtlebot(tb3_1) using only the Odometry data from both turtlebots.
+1) In odoo.py we implemented tracking of turtlebot(tb3_2) by a 2nd turtlebot(tb3_1) using only the Odometry data from both turtlebots. 
 
 2) In consenKP.py we implemented 1D (average)consensus of 3 TurtleBots using the Kp controller.
 
 3) In tra1p.py we applied the Kp controller to track one turtlebot3 by another , it follows a smooth trajectory to catch the other turtlebot, here we also incorporated different values of Kp w.r.t. the distance between the bots, a function that outputs the value of Kp when we give it the value of distance between the bots is what we are typing to build and implement that in the future.
 
-4) In 2Dconsen.py we are trying to reach a average point of 3 turtlebots that we have spawned. 
+4) In 2Dconsen.py we are trying to reach a average point of 3 turtlebots that we have spawned. We are using Kp controller.
+
+https://github.com/Ruudddiiii/TB3_Task/assets/107204888/ed6f2b29-702a-4d0e-9e6a-9b73656107b0
+
+
 
 
 5) In intersect.cpp , we have 3 circles with different centres and they are growing with a same rate(radius), and we are interested in coordinate which lies in all the circles and for that coordinate the radius is smallest possible.
