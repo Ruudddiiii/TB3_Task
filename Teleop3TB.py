@@ -32,6 +32,9 @@ class Turtlebot3PositionControl(Node):
         self.c2 = 0
         self.c3 = 0
         # Initialize Twist message
+
+        #distance between the bot is 0.5m
+        d = 0.5 
         
         # self.timer1 = self.create_timer(0.1, self.com_pt1)
         # self.timer2 = self.create_timer(0.1, self.com_pt2)
