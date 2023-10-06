@@ -1,6 +1,10 @@
 # TB3_Task
 
 1) In odoo.py we implemented tracking of turtlebot(tb3_2) by a 2nd turtlebot(tb3_1) using only the Odometry data from both turtlebots. 
+   
+
+https://github.com/Ruudddiiii/TB3_Task/assets/107204888/543551e3-9b13-406c-980c-95a2b5b662ed
+
 
 2) In consenKP.py we implemented 1D (average)consensus of 3 TurtleBots using the Kp controller.
 
