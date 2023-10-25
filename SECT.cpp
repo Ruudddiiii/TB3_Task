@@ -132,7 +132,7 @@ else
 
     }
   }
-//   cout<<"HEHE"<<x;
+
 //   cout<<p1.F<<" "<<p1.S<<x;
   if(d==0.0)
   {
