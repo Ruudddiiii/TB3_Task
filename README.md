@@ -37,3 +37,5 @@ In testc package i have integrated the intersectFAST.cpp code with the 4 turtleb
 
 https://github.com/Ruudddiiii/TB3_Task/assets/107204888/ab345082-4b1f-47d2-a008-72d89a9d9d08
 
+8) In SECT.cpp we have written the raw code for minimum time consensus for multiple mobile robot, which runs in O(n) time and gives accurate estimate of the point as compared to intersectFASt.cpp which was just a brute force technique. Further implementation with multiple turtlebot is yet to be accomplished. 
+
