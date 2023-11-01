@@ -3,7 +3,7 @@
    मा कर्मफलहेतुर्भुर्मा ते संगोऽस्त्वकर्मणि ॥
                                    */
 
-# Author : Rudresh Singh
+// Author : Rudresh Singh
 
 
 #include <bits/stdc++.h>
@@ -42,27 +42,31 @@ double poww(double a, double b)
 
 int main()
 {
-double x1,y1,x2,y2,x3,y3,x4,y4,i,j,k,l,d,min,radi,radi1;
+double x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,i,j,k,l,d,min,radi,radi1;
 vector<pair<double,double>> v1,v2,v3,v;
 set<pair<double,double>> se1,se2,se3,se4;
-pair<double,double> p1,p2,p3,p4,point1,point2,point3;
+pair<double,double> p1,p2,p3,p4,p5,point1,point2,point3;
 
-x1=1.9;  // centre of different cirles
-y1=6.8;
-x2=11.2;
-y2=-13.0;
-x3=3.0;
-y3=-1.5;
-x4=-14.0;
-y4=-17.0;
+x1=2.0;  // centre of different cirles
+y1=-1.0;
+x2=-2.0;
+y2=2.0;
+x3=4.0;
+y3=2.0;
+x4=3.0;
+y4=5.0;
+x5=4.0;
+y5=5.0;
 p1=mp(x1,y1);
 p2=mp(x2,y2);
 p3=mp(x3,y3);
 p4=mp(x4,y4);
+p5=mp(x5,y5);
 v.pb(p1);
 v.pb(p2);
 v.pb(p3);
 v.pb(p4);
+v.pb(p5);
 min=0;
 for(i=0;i<v.size();i++)
 {
@@ -72,7 +76,7 @@ for(i=0;i<v.size();i++)
 }
 cout<<"The farthest point to origin : \n";
 cout<<point1.F<<" "<<point1.S<<x;
-cout<<"Distance is : \n";
+cout<<"Distance is of this point to origin : \n";
 cout<<fixed<<min<<x;
 double mx =0;
 double x3_net,y3_net;
@@ -132,7 +136,6 @@ else
 
     }
   }
-
 //   cout<<p1.F<<" "<<p1.S<<x;
   if(d==0.0)
   {
