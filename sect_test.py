@@ -1,3 +1,6 @@
+
+# Author : Rudresh Singh 
+
 import math
 
 def dist(p1, p2):
