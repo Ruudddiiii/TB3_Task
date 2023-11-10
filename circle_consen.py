@@ -8,10 +8,11 @@ import numpy
 import math
 from rclpy.qos import QoSProfile
 from nav_msgs.msg import Odometry
+import math
 
 def dist(p1,p2):
-  
   return (p1[0]-p2[0])**2 + (p1[1]-p2[1])**2
+  
 
 
 
@@ -73,10 +74,14 @@ class Turtlebot3PositionControl(Node):
             self.odom_callback5,
             qos)
 
-        self.a = -1
-        self.b = 1
-        self.r = 10
-        self.ans = 0
+        self.a = 0
+        self.b = 0
+        self.r = 5
+        self.ans1 = 0
+        self.ans2 = 0
+        self.ans3 = 0
+        self.ans4 = 0
+        self.ans5 = 0
         self.c1 = 0
         self.c2 = 0
         self.c3 = 0
@@ -153,21 +158,26 @@ class Turtlebot3PositionControl(Node):
             x1 = self.last_pose_x1
             y1 = self.last_pose_y1
             m = (y1 - self.b)/(x1 - self.a)
-            c = x1 - m * y1
-            a1 = -(c - (c + m*x1 + m*(- c**2 - 2*c*m*x1 + 2*c*y1 - (m**2)*(x1**2) + 2*m*x1*y1 - y1**2)**(1/2) + (m**2)*y1)/(m**2 + 1))/m
-            a2 = -(c - (c + m*x1 - m*(- c**2 - 2*c*m*x1 + 2*c*y1 - (m**2)*(x1**2) + 2*m*x1*y1 - y1**2)**(1/2) + (m**2)*y1)/(m**2 + 1))/m
+            c = y1 - m * x1
+            r = self.r
+            a = self.a
+            b = self.b
+            a1 = -(c - (c + m*a + m*(- c**2 - 2*c*m*a + 2*c*b + (m**2)*r**2 - (m**2)*a**2 + 2*m*a*b + r**2 - b**2)**(1/2) + (m**2)*b)/(m**2 + 1))/m
+            a2 = -(c - (c + m*a - m*(- c**2 - 2*c*m*a + 2*c*b + (m**2)*r**2 - (m**2)*a**2 + 2*m*a*b + r**2 - b**2)**(1/2) + (m**2)*b)/(m**2 + 1))/m
             b1 = m*a1 + c
             b2 = m*a2 + c
             p1 = [a1,b1]
             p2 = [a2,b2]
             p3 = [x1,y1]
-            if(dist(p1,p3)<=dist(p2,p3)):
-             ans = p1
+            if(dist(p1,p3) < dist(p2,p3)):
+             self.ans1 = p1
             else:
-             ans  = p2
+             self.ans1 = p2
         self.c1+=1
-        x_net=self.last_pose_x1 - ans[0]
-        y_net=self.last_pose_y1 - ans[1]
+        print(self.ans1 )
+        
+        x_net=self.last_pose_x1 - self.ans1[0]
+        y_net=self.last_pose_y1 - self.ans1[1]
         theta_net = numpy.arctan(y_net/x_net)*180/math.pi - self.last_pose_theta1*180/math.pi  
         dist_net = abs(math.sqrt(x_net**2 + y_net**2))
         if(x_net > 0 and y_net >0 ):
@@ -252,21 +262,27 @@ class Turtlebot3PositionControl(Node):
             x1 = self.last_pose_x2
             y1 = self.last_pose_y2
             m = (y1 - self.b)/(x1 - self.a)
-            c = x1 - m * y1
-            a1 = -(c - (c + m*x1 + m*(- c**2 - 2*c*m*x1 + 2*c*y1 - (m**2)*(x1**2) + 2*m*x1*y1 - y1**2)**(1/2) + (m**2)*y1)/(m**2 + 1))/m
-            a2 = -(c - (c + m*x1 - m*(- c**2 - 2*c*m*x1 + 2*c*y1 - (m**2)*(x1**2) + 2*m*x1*y1 - y1**2)**(1/2) + (m**2)*y1)/(m**2 + 1))/m
+            c = y1 - m * x1
+            r = self.r
+            a = self.a
+            b = self.b
+            a1 = -(c - (c + m*a + m*(- c**2 - 2*c*m*a + 2*c*b + (m**2)*r**2 - (m**2)*a**2 + 2*m*a*b + r**2 - b**2)**(1/2) + (m**2)*b)/(m**2 + 1))/m
+            a2 = -(c - (c + m*a - m*(- c**2 - 2*c*m*a + 2*c*b + (m**2)*r**2 - (m**2)*a**2 + 2*m*a*b + r**2 - b**2)**(1/2) + (m**2)*b)/(m**2 + 1))/m
+            b1 = m*a1 + c
+            b2 = m*a2 + c
             b1 = m*a1 + c
             b2 = m*a2 + c
             p1 = [a1,b1]
             p2 = [a2,b2]
             p3 = [x1,y1]
             if(dist(p1,p3)<=dist(p2,p3)):
-             ans = p1
+             self.ans2 = p1
             else:
-             ans  = p2
+             self.ans2  = p2
         self.c2+=1
-        x_net=self.last_pose_x2 - ans[0]
-        y_net=self.last_pose_y2 - ans[1]
+        # print(self.ans2)
+        x_net=self.last_pose_x2 - self.ans2[0]
+        y_net=self.last_pose_y2 - self.ans2[1]
         theta_net = numpy.arctan(y_net/x_net)*180/math.pi - self.last_pose_theta2*180/math.pi  
         dist_net = abs(math.sqrt(x_net**2 + y_net**2))
         if(x_net > 0 and y_net >0 ):
@@ -351,21 +367,28 @@ class Turtlebot3PositionControl(Node):
             x1 = self.last_pose_x3
             y1 = self.last_pose_y3
             m = (y1 - self.b)/(x1 - self.a)
-            c = x1 - m * y1
-            a1 = -(c - (c + m*x1 + m*(- c**2 - 2*c*m*x1 + 2*c*y1 - (m**2)*(x1**2) + 2*m*x1*y1 - y1**2)**(1/2) + (m**2)*y1)/(m**2 + 1))/m
-            a2 = -(c - (c + m*x1 - m*(- c**2 - 2*c*m*x1 + 2*c*y1 - (m**2)*(x1**2) + 2*m*x1*y1 - y1**2)**(1/2) + (m**2)*y1)/(m**2 + 1))/m
+            c = y1 - m * x1
+            r = self.r
+            a = self.a
+            b = self.b
+            a = self.a
+            b = self.b
+            a1 = -(c - (c + m*a + m*(- c**2 - 2*c*m*a + 2*c*b + (m**2)*r**2 - (m**2)*a**2 + 2*m*a*b + r**2 - b**2)**(1/2) + (m**2)*b)/(m**2 + 1))/m
+            a2 = -(c - (c + m*a - m*(- c**2 - 2*c*m*a + 2*c*b + (m**2)*r**2 - (m**2)*a**2 + 2*m*a*b + r**2 - b**2)**(1/2) + (m**2)*b)/(m**2 + 1))/m
+            b1 = m*a1 + c
+            b2 = m*a2 + c
             b1 = m*a1 + c
             b2 = m*a2 + c
             p1 = [a1,b1]
             p2 = [a2,b2]
             p3 = [x1,y1]
             if(dist(p1,p3)<=dist(p2,p3)):
-             ans = p1
+             self.ans3 = p1
             else:
-             ans  = p2
+             self.ans3  = p2
         self.c3+=1
-        x_net=self.last_pose_x3 - ans[0]
-        y_net=self.last_pose_y3 - ans[1]
+        x_net=self.last_pose_x3 - self.ans3[0]
+        y_net=self.last_pose_y3 - self.ans3[1]
         theta_net = numpy.arctan(y_net/x_net)*180/math.pi - self.last_pose_theta3*180/math.pi  
         dist_net = abs(math.sqrt(x_net**2 + y_net**2))
         if(x_net > 0 and y_net >0 ):
@@ -450,21 +473,28 @@ class Turtlebot3PositionControl(Node):
             x1 = self.last_pose_x4
             y1 = self.last_pose_y4
             m = (y1 - self.b)/(x1 - self.a)
-            c = x1 - m * y1
-            a1 = -(c - (c + m*x1 + m*(- c**2 - 2*c*m*x1 + 2*c*y1 - (m**2)*(x1**2) + 2*m*x1*y1 - y1**2)**(1/2) + (m**2)*y1)/(m**2 + 1))/m
-            a2 = -(c - (c + m*x1 - m*(- c**2 - 2*c*m*x1 + 2*c*y1 - (m**2)*(x1**2) + 2*m*x1*y1 - y1**2)**(1/2) + (m**2)*y1)/(m**2 + 1))/m
+            c = y1 - m * x1
+            r = self.r
+            a = self.a
+            b = self.b
+            a = self.a
+            b = self.b
+            a1 = -(c - (c + m*a + m*(- c**2 - 2*c*m*a + 2*c*b + (m**2)*r**2 - (m**2)*a**2 + 2*m*a*b + r**2 - b**2)**(1/2) + (m**2)*b)/(m**2 + 1))/m
+            a2 = -(c - (c + m*a - m*(- c**2 - 2*c*m*a + 2*c*b + (m**2)*r**2 - (m**2)*a**2 + 2*m*a*b + r**2 - b**2)**(1/2) + (m**2)*b)/(m**2 + 1))/m
+            b1 = m*a1 + c
+            b2 = m*a2 + c
             b1 = m*a1 + c
             b2 = m*a2 + c
             p1 = [a1,b1]
             p2 = [a2,b2]
             p3 = [x1,y1]
             if(dist(p1,p3)<=dist(p2,p3)):
-             ans = p1
+             self.ans4 = p1
             else:
-             ans  = p2
+             self.ans4  = p2
         self.c4+=1
-        x_net=self.last_pose_x4 - ans[0]
-        y_net=self.last_pose_y4 - ans[1]
+        x_net=self.last_pose_x4 - self.ans4[0]
+        y_net=self.last_pose_y4 - self.ans4[1]
         theta_net = numpy.arctan(y_net/x_net)*180/math.pi - self.last_pose_theta4*180/math.pi  
         dist_net = abs(math.sqrt(x_net**2 + y_net**2))
         if(x_net > 0 and y_net >0 ):
@@ -549,21 +579,28 @@ class Turtlebot3PositionControl(Node):
             x1 = self.last_pose_x5
             y1 = self.last_pose_y5
             m = (y1 - self.b)/(x1 - self.a)
-            c = x1 - m * y1
-            a1 = -(c - (c + m*x1 + m*(- c**2 - 2*c*m*x1 + 2*c*y1 - (m**2)*(x1**2) + 2*m*x1*y1 - y1**2)**(1/2) + (m**2)*y1)/(m**2 + 1))/m
-            a2 = -(c - (c + m*x1 - m*(- c**2 - 2*c*m*x1 + 2*c*y1 - (m**2)*(x1**2) + 2*m*x1*y1 - y1**2)**(1/2) + (m**2)*y1)/(m**2 + 1))/m
+            c = y1 - m * x1
+            r = self.r
+            a = self.a
+            b = self.b
+            a = self.a
+            b = self.b
+            a1 = -(c - (c + m*a + m*(- c**2 - 2*c*m*a + 2*c*b + (m**2)*r**2 - (m**2)*a**2 + 2*m*a*b + r**2 - b**2)**(1/2) + (m**2)*b)/(m**2 + 1))/m
+            a2 = -(c - (c + m*a - m*(- c**2 - 2*c*m*a + 2*c*b + (m**2)*r**2 - (m**2)*a**2 + 2*m*a*b + r**2 - b**2)**(1/2) + (m**2)*b)/(m**2 + 1))/m
+            b1 = m*a1 + c
+            b2 = m*a2 + c
             b1 = m*a1 + c
             b2 = m*a2 + c
             p1 = [a1,b1]
             p2 = [a2,b2]
             p3 = [x1,y1]
             if(dist(p1,p3)<=dist(p2,p3)):
-             ans = p1
+             self.ans5 = p1
             else:
-             ans  = p2
+             self.ans5  = p2
         self.c5+=1
-        x_net=self.last_pose_x5 - ans[0]
-        y_net=self.last_pose_y5 - ans[1]
+        x_net=self.last_pose_x5 - self.ans5[0]
+        y_net=self.last_pose_y5 - self.ans5[1]
         theta_net = numpy.arctan(y_net/x_net)*180/math.pi - self.last_pose_theta5*180/math.pi  
         dist_net = abs(math.sqrt(x_net**2 + y_net**2))
         if(x_net > 0 and y_net >0 ):
