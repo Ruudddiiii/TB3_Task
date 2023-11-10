@@ -43,3 +43,5 @@ https://github.com/Ruudddiiii/TB3_Task/assets/107204888/ab345082-4b1f-47d2-a008-
     
 10) In str_l.py we are giving value of m and c of y = mx + c line as input and 5 TBs will reach this line in minimum time.
 
+11) In circle_consen.py we are giving value of (a,b) centre and radius r of circle and the 5 TBs will try to reach there in minimum time.
+
