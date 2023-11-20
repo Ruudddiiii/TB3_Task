@@ -40,10 +40,11 @@ https://github.com/Ruudddiiii/TB3_Task/assets/107204888/ab345082-4b1f-47d2-a008-
 8) In sect_test.cpp and sect_test.py we have written the raw code for minimum time consensus for multiple mobile robot, which runs in O(n) time and gives accurate estimate of the point as compared to intersectFASt.cpp which was just a brute force technique. Further implementation with multiple turtlebot is yet to be accomplished. (Some error in code -> to be corrected)
 
 9) In mintime.py we have 5 turtlebot3 which are spawned randomly anywhere in a empty world and will try to converge to a point in minimum time using the sect_test output. (Some error in code -> to be corrected)
-
-10) In sect_new_test.py i am using Welzl's algorithm for finding the minimum enclosing circle(MEC) which works in O(n).
     
-11) In str_l.py we are giving value of m and c of y = mx + c line as input and 5 TBs will reach this line in minimum time.
+10) In str_l.py we are giving value of m and c of y = mx + c line as input and 5 TBs will reach this line in minimum time.
 
-12) In circle_consen.py we are giving value of (a,b) centre and radius r of circle and the 5 TBs will try to reach there in minimum time.
+11) In circle_consen.py we are giving value of (a,b) centre and radius r of circle and the 5 TBs will try to reach there in minimum time.
+
+12) In sect_new_test.py i am using Welzl's algorithm for finding the minimum enclosing circle(MEC) which works in O(n).
+
 
