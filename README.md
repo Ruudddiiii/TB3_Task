@@ -22,6 +22,8 @@ https://github.com/Ruudddiiii/TB3_Task/assets/107204888/ed6f2b29-702a-4d0e-9e6a-
 
 6) intersectFAST.cpp , we now have 4 circle which are growing. I have optimised the code using set , which has log(n) time complexity of finding pair in itself.
 
+7) In min_circle_brute.cpp i have created a random number generator function and it gives the 5 different set of coordinates and for that coordinates the MEC's centre is given as output, Time complexity is O(n^4).
+
 [Screencast from 09-28-2023 07:43:40 PM.webm](https://github.com/Ruudddiiii/TB3_Task/assets/107204888/dc37f253-b985-4658-a635-9c8a4a01bbd7)
 
 Here suppose i have spawned 4 turtlebot in a 6m x 6m space and trying to find the intersection point of the circles, for this specific case i have : 
@@ -32,19 +34,19 @@ and intersection of this circles given by intersectFAST.cpp is :
 Radius is : 10.89" . 
 In testc package i have integrated the intersectFAST.cpp code with the 4 turtlebot to get their point of interestion of their growing circle, and further using cmd_vel topic we can steer robot to that point(steer is yet to be implemented) .
 
-7) In teleop3TB.py i am trying to control 3 turtlebot3 together using (W,S,D,A,X) keys so that they always stay on a stright line and move together.
+8) In teleop3TB.py i am trying to control 3 turtlebot3 together using (W,S,D,A,X) keys so that they always stay on a stright line and move together.
 
 
 https://github.com/Ruudddiiii/TB3_Task/assets/107204888/ab345082-4b1f-47d2-a008-72d89a9d9d08
 
-8) In sect_test.cpp and sect_test.py we have written the raw code for minimum time consensus for multiple mobile robot, which runs in O(n) time and gives accurate estimate of the point as compared to intersectFASt.cpp which was just a brute force technique. Further implementation with multiple turtlebot is yet to be accomplished. (Some error in code -> to be corrected)
+9) In sect_test.cpp and sect_test.py we have written the raw code for minimum time consensus for multiple mobile robot, which runs in O(n) time and gives accurate estimate of the point as compared to intersectFASt.cpp which was just a brute force technique. Further implementation with multiple turtlebot is yet to be accomplished. (Some error in code -> to be corrected)
 
-9) In mintime.py we have 5 turtlebot3 which are spawned randomly anywhere in a empty world and will try to converge to a point in minimum time using the sect_test output. (Some error in code -> to be corrected)
+10) In mintime.py we have 5 turtlebot3 which are spawned randomly anywhere in a empty world and will try to converge to a point in minimum time using the sect_test output. (Some error in code -> to be corrected)
     
-10) In str_l.py we are giving value of m and c of y = mx + c line as input and 5 TBs will reach this line in minimum time.
+11) In str_l.py we are giving value of m and c of y = mx + c line as input and 5 TBs will reach this line in minimum time.
 
-11) In circle_consen.py we are giving value of (a,b) centre and radius r of circle and the 5 TBs will try to reach there in minimum time.
+12) In circle_consen.py we are giving value of (a,b) centre and radius r of circle and the 5 TBs will try to reach there in minimum time.
 
-12) In sect_new_test.py i am using Welzl's algorithm for finding the minimum enclosing circle(MEC) which works in O(n).
+13) In sect_new_test.py i am using Welzl's algorithm for finding the minimum enclosing circle(MEC) which works in O(n).
 
 
