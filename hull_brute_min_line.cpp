@@ -3,7 +3,7 @@
    मा कर्मफलहेतुर्भुर्मा ते संगोऽस्त्वकर्मणि ॥
                                    */
 
-// Hull code is from gfg with minoe changes.
+// Hull code is from gfg with minor changes.
 
 
 #include <bits/stdc++.h>
