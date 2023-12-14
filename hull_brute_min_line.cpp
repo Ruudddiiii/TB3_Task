@@ -1,3 +1,11 @@
+/*
+   कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।
+   मा कर्मफलहेतुर्भुर्मा ते संगोऽस्त्वकर्मणि ॥
+                                   */
+
+// Hull code is from gfg with minoe changes.
+
+
 #include <bits/stdc++.h>
 using namespace std;
 #define F first 
