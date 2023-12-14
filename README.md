@@ -49,4 +49,6 @@ https://github.com/Ruudddiiii/TB3_Task/assets/107204888/ab345082-4b1f-47d2-a008-
 
 13) In sect_new_test.py i am using Welzl's algorithm for finding the minimum enclosing circle(MEC) which works in O(n).
 
+14) In hull_brute_min_line.cpp i am trying to find the line on which randomly spawned robots can align in minimum time, it is just a raw code that returns the equation of line in form y = mx + c and the code works in O(n^2).
+
 
