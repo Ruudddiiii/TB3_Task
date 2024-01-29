@@ -51,4 +51,6 @@ https://github.com/Ruudddiiii/TB3_Task/assets/107204888/ab345082-4b1f-47d2-a008-
 
 14) In hull_brute_min_line.cpp i am trying to find the line on which randomly spawned robots can align in minimum time, it is just a raw code that returns the equation of line in form y = mx + c and the code works in O(n^2).
 
+15) In min_line_5TBs.py i am spawning 5 TBs and calculating the min_line using the Algorithm defined in (14).
+
 
