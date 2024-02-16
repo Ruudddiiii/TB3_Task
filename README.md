@@ -53,4 +53,6 @@ https://github.com/Ruudddiiii/TB3_Task/assets/107204888/ab345082-4b1f-47d2-a008-
 
 15) In min_line_5TBs.py i am spawning 5 TBs and calculating the min_line using the Algorithm defined in (14).
 
+16) In min_line_brute.cpp using random number generator i am generating the values of (m,c) , So that we have 10^8 different lines, and using brute force we can check which line is minimum amongst them.
+
 
