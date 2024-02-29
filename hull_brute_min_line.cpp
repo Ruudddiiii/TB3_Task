@@ -95,10 +95,21 @@ int main()
     }
     cout<<x<<x<<x;
     cout<<vv[e].F[0].F<<" "<<vv[e].F[0].S<<" "<<vv[e].F[1].F<<" "<<vv[e].F[1].S<<"    "<<vv[e].S.F<<" "<<vv[e].S.S<<x;
-    m = (vv[e].F[1].S - vv[e].F[0].S)/(vv[e].F[1].F - vv[e].F[0].F);
-    p1 = (vv[e].S.F + vv[e].F[0].F)/2;
-    p2 = (vv[e].S.S + vv[e].F[0].S)/2;
-    cout<<"y = "<<m<<"x + "<<p2-m*p1<<x;
+    double x1,x3,x2,x4,x5,y1,y2,y3,y4,y5;
+    x1 = vv[e].F[0].F;
+    y1 = vv[e].F[0].S;
+    x2 = vv[e].F[1].F;
+    y2 = vv[e].F[1].S;
+    x3 = vv[e].S.F;
+    y3 = vv[e].S.S;
+    m = (y2 - y1) / (x2 - x1);
+    x4 = ( y3 - y1 + x1*m + x3/m)/(m + 1/m);
+    y4 = - x4/m + x3/m + y3;
+    x5 = (x4 + x3)/2;
+    y5 = (y4 + y3)/2;
+    c = (y5 - m * x5);
+    cout<<x<<x;
+    cout<<"y = "<<m<<"x + "<<c<<x;
     
 
 }
