@@ -55,4 +55,6 @@ https://github.com/Ruudddiiii/TB3_Task/assets/107204888/ab345082-4b1f-47d2-a008-
 
 16) In min_line_brute.cpp using random number generator i am generating the values of (m,c) , So that we have 10^8 different lines, and using brute force we can check which line is minimum amongst them.
 
+17) In compare_algo_min_line.cpp i am comapring our Algorithm with the brute force Algorithm for minimum time line.
+
 
