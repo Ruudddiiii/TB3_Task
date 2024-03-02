@@ -65,9 +65,9 @@ int main()
 freopen("output.txt", "w", stdout);
     int r;
 
-for(r=0;r<20;r++)
+for(r=0;r<100;r++)
 {
-     cout<<r<<". \n";
+     cout<<r+1<<" ";
 double x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,j,k,l,min,radi,radi1,d=0,a,b=0,r=0,mx,mxx,mxxx;
 int i;
 
@@ -101,12 +101,12 @@ srand(time(0));
 
 
 
-int num_points = 10000;
+int num_points = 20000;
 
 for(int i=0;i<num_points;i++)
 {
-    double random_x = static_cast<double>(rand()) / RAND_MAX * 100 - 50; 
-    double random_y = static_cast<double>(rand()) / RAND_MAX * 100 - 50; 
+    double random_x = static_cast<double>(rand()) / RAND_MAX * 200 - 100; 
+    double random_y = static_cast<double>(rand()) / RAND_MAX * 200 - 100; 
     vm.pb(random_x);
     vc.pb(random_y);
 }
@@ -137,13 +137,16 @@ for(i=0;i<vc.size();i++)
         
     }
 }
-cout<<x<<x;
-cout<<"Brute force : \n";
-cout<<"y = "<<p1.S<<"x + "<<p1.F<<x;
+// cout<<x<<x;
 
-pair<double ,double> pp;
+// cout<<"Brute force : \n";
+// cout<<mxxx<<x;
+// cout<<"y = "<<p1.S<<"x + "<<p1.F<<x;
+
+pair<double ,double> pp,ppp;
 pp.F=p1.S;
 pp.S=p1.F;
+ppp.F=mxxx;
 
 v1.clear();
     // vector<Point>  v,v1;
@@ -192,7 +195,7 @@ for(i=0;i<v.size();i++)
     // }
     // cout<<x<<x<<x;
     // cout<<vv[e].F[0].F<<" "<<vv[e].F[0].S<<" "<<vv[e].F[1].F<<" "<<vv[e].F[1].S<<"    "<<vv[e].S.F<<" "<<vv[e].S.S<<x;
- 
+    ppp.S=mxx/2;
     x1 = vv[e].F[0].F;
     y1 = vv[e].F[0].S;
     x2 = vv[e].F[1].F;
@@ -205,18 +208,22 @@ for(i=0;i<v.size();i++)
     x5 = (x4 + x3)/2;
     y5 = (y4 + y3)/2;
     c = (y5 - m * x5);
-    cout<<x<<x;
-    cout<<"Our Algorithm : \n";
-    cout<<"y = "<<m<<"x + "<<c<<x;
-    cout<<x<<x;
+    // cout<<x<<x;
+    // cout<<"Our Algorithm : \n";
+    // cout<<mxx/2<<x;
+    // cout<<"y = "<<m<<"x + "<<c<<x;
+    // cout<<x<<x;
 
-    cout<<"Error % : \n";
+    // cout<<"Error in Max Distance  : \n";
     double ee1,ee2;
     // cout<<m<<x;
     // cout<<pp.F<<x;
-    ee1 = (abs((abs(m)-abs(pp.F)))/abs(m))*100;
-    ee2 = (abs((abs(c)-abs(pp.S)))/abs(c))*100;
-    cout<<ee1<<" "<<ee2<<x<<x;
+    // ee1 = (abs((abs(m)-abs(pp.F)))/abs(m))*100;
+    // ee2 = (abs((abs(c)-abs(pp.S)))/abs(c))*100;
+    // ee1 = (abs((abs(m)-abs(pp.F))))*100;
+    // ee2 = (abs((abs(c)-abs(pp.S))))*100;
+    ee1 = (abs(ppp.F-ppp.S)/ppp.S)*100;
+    cout<<ee1<<x<<x;
 
 
 
