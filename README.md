@@ -57,4 +57,6 @@ https://github.com/Ruudddiiii/TB3_Task/assets/107204888/ab345082-4b1f-47d2-a008-
 
 17) In compare_algo_min_line.cpp i am comapring our Algorithm with the brute force Algorithm for minimum time line.
 
+18) In brute_algo.cpp i am comapring algo for minimum time circle.
+
 
