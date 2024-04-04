@@ -59,4 +59,6 @@ https://github.com/Ruudddiiii/TB3_Task/assets/107204888/ab345082-4b1f-47d2-a008-
 
 18) In brute_algo.cpp i am comapring algo for minimum time circle.
 
+19) In opti_mtc.cpp i have optimized the time complexity from O(n^5) to O(n^4) but the space complexity has increased a lot!
+
 
