@@ -42,9 +42,6 @@ random_device rd;
 srand(rd());
 
 
-
-
-
 v.pb(mp(static_cast<double>(rand()) / RAND_MAX * 10 - 5,static_cast<double>(rand()) / RAND_MAX * 10 - 5));
 v.pb(mp(static_cast<double>(rand()) / RAND_MAX * 10 - 5,static_cast<double>(rand()) / RAND_MAX * 10 - 5));
 v.pb(mp(static_cast<double>(rand()) / RAND_MAX * 10 - 5,static_cast<double>(rand()) / RAND_MAX * 10 - 5));
@@ -69,9 +66,6 @@ v.pb(mp(static_cast<double>(rand()) / RAND_MAX * 10 - 5,static_cast<double>(rand
 for(i=0;i<v.size();i++)
 cout<<v[i].F<<","<<v[i].S<<xx;
 cout<<xx;
-
-
-
 
 mx=0;
 mxx=INT_MAX;
@@ -104,7 +98,6 @@ for(i=0;i<v.size();i++)
                     xfinal = ((y2net - y1net) + (m1*x1net - m2*x2net))/(m1 - m2);
                     yfinal = m1*xfinal - m1*x1net + y1net;
                     ff = mp(xfinal,yfinal);
-                    
                     mx=0;
                     mxx=INT_MAX;
                     for(m=0;m<v.size();m++)
@@ -114,8 +107,6 @@ for(i=0;i<v.size();i++)
                         mx= ndist;
                         if(ndist<mxx)
                         mxx=ndist;
-
-
 
                     }
                     mxxx = mx - (mx + mxx)/2;
@@ -130,8 +121,6 @@ for(i=0;i<v.size();i++)
                     p4=v[l];
 
                     // cout<<ans.F<<" "<<ans.S<<x;
-                     
-                    
                     
                     }
 
@@ -222,11 +211,11 @@ for(i=0;i<vp.size();i++)
     }
     // cout<<mx<<xx;
     mxxx = mx - (mx + mxx)/2;
-        if(mxxx < finn)
-        {finn=mxxx;
-        ans=vp[i];
-        radd = (mx + mxx)/2;
-        }
+    if(mxxx < finn)
+    {finn=mxxx;
+    ans=vp[i];
+    radd = (mx + mxx)/2;
+    }
 }
 // cout<<dd5<<xx;
 cout<<"Minimum distance from each point our algo : ";
