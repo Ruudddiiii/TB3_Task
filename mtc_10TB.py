@@ -1,10 +1,14 @@
+
+# Author : Rudresh Singh 
+
+
 import random
 import math
 
 def dist(p1, p2):
     return math.sqrt((p2[0] - p1[0]) ** 2 + (p2[1] - p1[1]) ** 2)
 
-# Author : Rudresh Singh 
+
 
 import rclpy
 from geometry_msgs.msg import Twist
@@ -210,17 +214,17 @@ class Turtlebot3PositionControl(Node):
             qos)
         
         self.timer2 = self.create_timer(0.1, self.runner)  
-        self.timer3 = self.create_timer(0.1, self.computation)  
-        self.timer4 = self.create_timer(0.1, self.same_orien1)  
-        self.timer5 = self.create_timer(0.1, self.same_orien2)  
-        self.timer6 = self.create_timer(0.1, self.same_orien3)  
-        self.timer7 = self.create_timer(0.1, self.same_orien4)
-        self.timer8 = self.create_timer(0.1, self.same_orien5)
-        self.timer9 = self.create_timer(0.1, self.same_orien6)  
-        self.timer10 = self.create_timer(0.1, self.same_orien7)  
-        self.timer11 = self.create_timer(0.1, self.same_orien8)  
-        self.timer12 = self.create_timer(0.1, self.same_orien9)
-        self.timer13 = self.create_timer(0.1, self.same_orien10)  
+        # self.timer3 = self.create_timer(0.1, self.computation)  
+        # self.timer4 = self.create_timer(0.1, self.same_orien1)  
+        # self.timer5 = self.create_timer(0.1, self.same_orien2)  
+        # self.timer6 = self.create_timer(0.1, self.same_orien3)  
+        # self.timer7 = self.create_timer(0.1, self.same_orien4)
+        # self.timer8 = self.create_timer(0.1, self.same_orien5)
+        # self.timer9 = self.create_timer(0.1, self.same_orien6)  
+        # self.timer10 = self.create_timer(0.1, self.same_orien7)  
+        # self.timer11 = self.create_timer(0.1, self.same_orien8)  
+        # self.timer12 = self.create_timer(0.1, self.same_orien9)
+        # self.timer13 = self.create_timer(0.1, self.same_orien10)  
     
         
         
